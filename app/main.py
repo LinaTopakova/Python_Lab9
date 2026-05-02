@@ -13,7 +13,6 @@ app = FastAPI(
         "email": "topakovap04@mail.ru", 
     },
 )
-
 app.include_router(items.router)
 
 @app.get("/")
