@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from app.config import Settings
 from app.routers import items
+from app.logging_config import setup_logging
 
+setup_logging()
 settings = Settings()
 
 app = FastAPI(
