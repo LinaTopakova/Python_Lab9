@@ -9,12 +9,17 @@ app = FastAPI(
     description="Учебный проект для демонстрации тестирования и деплоя",
     version="1.0.0",
     contact={
-        "name": "Топакова Полина Васильевна",   
-        "email": "topakovap04@mail.ru", 
+        "name": "Ваше Имя Фамилия",
+        "email": "student@example.com",
     },
 )
+
 app.include_router(items.router)
 
 @app.get("/")
 async def root():
     return {"message": "Hello, World!"}
+
+@app.get("/health", tags=["health"])
+async def health_check():
+    return {"status": "ok"}
